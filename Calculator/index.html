@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="Container">
+        <div class="Calculator">
+            <input type="text"  id="output-Screen" placeholder="0" >
+            <button onclick="Clear()" class="btn-1 about-outer-shadow hover-in-shadow">Cl</button>
+            <button onclick="Delete()">Del</button>
+            <button onclick="dispaly('%')"class="btn-1 about-outer-shadow hover-in-shadow">%</button>
+            <button onclick="dispaly('/')"class="btn-1 about-outer-shadow hover-in-shadow">/</button>
+            <button onclick="dispaly('1')"class="btn-1 about-outer-shadow hover-in-shadow">1</button>
+            <button onclick="dispaly('2')"class="btn-1 about-outer-shadow hover-in-shadow">2</button>
+            <button onclick="dispaly('3')"class="btn-1 about-outer-shadow hover-in-shadow">3</button>
+            <button onclick="dispaly('')"class="btn-1 about-outer-shadow hover-in-shadow"></button>
+            <button onclick="dispaly('4')"class="btn-1 about-outer-shadow hover-in-shadow">4</button>
+            <button onclick="dispaly('5')"class="btn-1 about-outer-shadow hover-in-shadow">5</button>
+            <button onclick="dispaly('6')"class="btn-1 about-outer-shadow hover-in-shadow">6</button>
+            <button onclick="dispaly('-')"class="btn-1 about-outer-shadow hover-in-shadow">-</button>
+            <button onclick="dispaly('7')"class="btn-1 about-outer-shadow hover-in-shadow">7</button>
+            <button onclick="dispaly('8')"class="btn-1 about-outer-shadow hover-in-shadow">8</button>
+            <button onclick="dispaly('9')"class="btn-1 about-outer-shadow hover-in-shadow">9</button>
+            <button onclick="dispaly('+')"class="btn-1 about-outer-shadow hover-in-shadow">+</button>
+            <button onclick="dispaly('.')"class="btn-1 about-outer-shadow hover-in-shadow">.</button>
+            <button onclick="dispaly('0')"class="btn-1 about-outer-shadow hover-in-shadow">0</button>
+            <button onclick="Calculate() " class="equal">=</button>
+         </div>
+    </div>
+    <script>
+        let outputScreen = document.getElementById("output-Screen");
+        function dispaly(num){
+            outputScreen.value += num;
+        }
+        function Calculate(){
+            try{
+                outputScreen.value = eval(outputScreen.value);
+            }
+            catch(error){
+                alert("Invalid Input");
+            }
+        }
+        function Clear(){
+            outputScreen.value = "";
+        }
+        function Delete(){
+            let tempValue = outputScreen.value;
+            outputScreen.value = tempValue.substring(0,tempValue.length - 1);
+
+        }
+    </script>
+  <footer> &copy2024 it is designed by TAMILSELVAN R
+  </footer>
+</body>
+</html>

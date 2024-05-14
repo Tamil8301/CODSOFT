@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: lightblue;
+    font-family: serif;
+    outline: none;
+}
+.Container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Calculator{
+    background-color: forestgreen;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: inset 5px 5px 10px #ffff, 5px 5px 12px rgba(0, 0, 0, 20);
+    display: grid;
+    grid-template-columns: repeat(4, 68px);
+}
+input{
+    grid-column: span 4;
+    height: 70px;
+    width: 260px;
+    background-color: #ffffff;
+    box-shadow: inset -5px -5px 12px  #ffffff,
+                        inset 5px 5px 12px rgba(0, 0, 0,0.16);
+    border: none;
+    border-radius: 30px;
+    color: rgb(70, 70, 70);
+    font-size: 30px;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 23px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    cursor: default;
+
+}
+button{
+    height: 60px;
+    width: 60px;
+    margin-top: 9px;
+    background-color: black;
+    box-shadow: inset -5px -5px 12px  #ffffff,
+                        inset 5px 5px 12px rgba(0, 0, 0,0.16);
+    border: none;
+    border-radius: 50%;
+    color:white;
+    font-size: medium;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.equal{
+    width: 115px;
+    border-radius: 40px;
+    margin-top: 9px;
+    margin-left: 10px;
+}
+.inner-shadow{
+    box-shadow: var(--inner-shadow);
+}
+
+.hover-in-shadow{
+    position: relative;
+    z-index: 1;
+}
+.hover-in-shadow:hover{
+    box-shadow: var(--outer-shadow-0);
+}
+.hover-in-shadow::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+.btn-1::after{
+    border-radius: 30px;
+}
+.hover-in-shadow:hover::after{
+    box-shadow: var(--inner-shadow)
+      }
+footer{
+  text-align: right;
+  font-size: 10px;
+}
