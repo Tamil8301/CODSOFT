@@ -1,4 +1,4 @@
-# Define a dictionary to store tasks
+
 tasks = {}
 
 def show_menu():
